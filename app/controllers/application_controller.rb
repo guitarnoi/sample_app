@@ -1,5 +1,10 @@
-class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+ class ApplicationController < ActionController::Base
+ protect_from_forgery with: :exception
+ def hello
+ render html: "hello, world!"
+ end
+end
+และไปที config/routes.rb แล้วเพิมโค๊ดด้านล่างนี <
+Rails.application.routes.draw do
+ root 'application#hello'
 end
